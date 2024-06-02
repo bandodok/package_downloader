@@ -1,0 +1,47 @@
+<html>
+<script src="static/script.js"></script>
+    <head>
+        <title>Package downloader</title>
+    </head>
+    <body>
+        <div class="main-form">
+            <label for="package">Package: </label>
+            <input type="text" name="package" id="package" onkeydown="submit(event)" required>
+        </div>
+
+        <div class="main-form">
+            <label for="platform">Platform: </label>
+            <select name="platform">
+                <option value="win_amd64">win_amd64</option>
+                <option value="linux_x86_64">linux_x86_64</option>
+                <option value="macosx_10_10_x86_64">macosx_10_10_x86_64</option>
+                <option value="any">any</option>
+            </select>
+        </div>
+
+        <div class="main-form">
+            <label for="python_version">Python version: </label>
+            <select name="python_version">
+                <option value="312">3.12</option>
+                <option value="311">3.11</option>
+                <option value="310">3.10</option>
+                <option value="39">3.9</option>
+                <option value="38">3.8</option>
+            </select>
+        </div>
+
+        <div class="main-form">
+            <input type="button" value="Get packages" onclick="customSubmit()">
+        </div>
+
+        <div>
+            <img id="busy" src="/static/busy.gif" style="display: none;">
+            <ul id="package_list">
+            </ul>
+        </div>
+
+        <div class="main-form">
+            <input id="download_all" style="visibility: hidden;" type="button" value="Download all" onclick="downloadArchive()">
+        </div>
+    </body>
+</html>

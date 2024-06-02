@@ -1,0 +1,8 @@
+[Unit]
+Description="Download packages with dependencies"
+[Service]
+User=root
+WorkingDirectory=/root/package_donloader
+Environment="PATH=/root/package_downloader/.venv/bin"
+ExecStart=/root/package_downloader/.venv/bin/python main.py
+Restart=on-failure
